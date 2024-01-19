@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.19.0/build/vega-embed.js"></script>
+    <title>TV SHOWS</title>
+    <style>
+        #sImage {
+            width: 100%;
+            max-width: 800px; /* Adjust the maximum width as needed */
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">TV SHOWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            DashBoards
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Visualisations Quantitatives et Categorielles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Graph2.html">Visualisations Spatiales et temporelles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Graph3.html">Visualisations text ou image </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="source_outils.html">Sources & outils </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipe.html">Members de l'Equipe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="vis" class="container justify-content-center">
+        <h2>Carte</h2>
+        <p> La carte géographique met en évidence la répartition mondiale des films et émissions de télévision en fonction de leur pays de production. Les résultats révèlent que les États-Unis et le Japon émergent en tant que principaux producteurs, générant un nombre significatif de productions. L'Europe, la Chine et l'Australie se distinguent également en tant que régions productrices dynamiques, hébergeant une diversité de films et de séries. En revanche, l'Inde et l'Afrique, bien que moins prolifiques, contribuent également à la scène mondiale de la production audiovisuelle. En outre, le Mexique affiche une présence notable . Cette répartition géographique offre un aperçu éclairant des centres de production  soulignant la variété et l'ampleur des contributions de différentes régions . Ces observations peuvent influencer les stratégies de distribution et de marketing, soulignant l'importance de prendre en compte la diversité des sources de production à l'échelle mondiale.</p>
+        <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkP5n0d4r6JvSRXEq2xTAmJGXiAou6tzHtsdtLkBHOGoVg_5kcnGPNytPqEKHu3IKnrPbpvGdjFN6F/pubchart?oid=295998633&amp;format=interactive"></iframe>
+    </div>
+
+    <div class="container justify-content-center">
+        <h2>Graph Vega</h2>
+        <p> Le graphique à barres élaboré avec Vega-Lite analyse la distribution des productions  en fonction de leur année de sortie. Les barres sont colorées en fonction du genre des productions, tandis que l'axe des abscisses représente l'année de sortie et l'axe des ordonnées affiche le nombre total de productions.Une observation marquante de ce graphique est la diversité croissante des genres au fil des années. Les barres colorées indiquent la profusion de genres de films et de séries, avec une nette augmentation dans les années les plus récentes. Cela suggère une tendance à la multiplication des choix de genres, témoignant de l'évolution des préférences du public et de la volonté des créateurs de contenu d'explorer diverses thématiques.
+            La profusion de choix de genres dans les années récentes peut être interprétée comme une réponse à une demande de plus en plus diversifiée du public. Les créateurs s'adaptent en proposant une gamme étendue de genres pour répondre aux goûts variés des spectateurs contemporains. Cette évolution suggère également une compétition accrue dans le secteur, chaque genre cherchant à captiver un public spécifique. </p>
+        <div id="vega-vis"></div>
+    </div>
+
+    <script>
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/anasely/datavis2024/main/Netflix-series.json"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "release_year", "type": "ordinal", "title": "Année de Sortie"},
+    "y": {"aggregate": "count", "type": "quantitative", "title": "Nombre de Films"},
+    "color": {"field": "genre", "type": "nominal", "title": "Genre"}
+  }
+        };
+
+        vegaEmbed("#vega-vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    </script>
+</body>
+</html>

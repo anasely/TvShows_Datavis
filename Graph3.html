@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.19.0/build/vega-embed.js"></script>
+    <title>TV SHOWS</title>
+    <style>
+        #sImage {
+            width: 100%;
+            max-width: 800px; /* Adjust the maximum width as needed */
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">TV SHOWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            DashBoards
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Visualisations Quantitatives et Categorielles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Graph2.html">Visualisations Spatiales et temporelles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Graph3.html">Visualisations text ou image </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="source_outils.html">Sources & outils </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipe.html">Members de l'Equipe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <h2>Nuage de mots</h2>
+        <p>
+            Le nuage de mots offre une représentation visuelle condensée et expressive des thèmes les plus récurrents . En un coup d'œil, il permet d'identifier les sujets dominants, offrant ainsi une vue synthétique et intuitive des éléments clés du contenu, ce qui peut faciliter la compréhension rapide et la détection de tendances.</p>
+        <iframe style='width: 626px; height: 404px;' src='https://voyant-tools.org/tool/Cirrus/?corpus=3b6e1864d7e839330ce9fe9d4d42e240'></iframe>   
+     </div>
+</body>
+</html>

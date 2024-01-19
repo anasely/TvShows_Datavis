@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.19.0/build/vega-embed.js"></script>
+    <title>TV SHOWS</title>
+    <style>
+        #sImage {
+            width: 100%;
+            max-width: 800px; /* Adjust the maximum width as needed */
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">TV SHOWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            DashBoards
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Visualisations Quantitatives et Categorielles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Graph2.html">Visualisations Spatiales et temporelles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Graph3.html">Visualisations text ou image </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="source_outils.html">Sources & outils </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipe.html">Members de l'Equipe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container ">
+        <hr>
+        <h4>DataSet :</h4>
+        <p>
+          
+          <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Information sur le dataset
+          </a>
+
+          <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapsecontenu" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Information sur le contenu
+          </a>
+          <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapsegeneral" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Sources de dataset
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            Le dataset est une collection d'informations sur des émissions ou des films, avec des détails tels que le titre, le genre, le réalisateur, la distribution, le pays, la date d'ajout, l'année de sortie, la note, la langue et le profit
+          </div>
+        </div>
+          <div class="collapse" id="collapsecontenu">
+            <div class="card card-body">
+              <p>En ce qui concerne les colonnes et leurs types, voici une liste des informations contenues</p>
+              <ul>
+                <li>show_id: chaîne de caractères (string)</li>
+  <li>genre: chaîne de caractères (string)</li>
+  <li>title: chaîne de caractères (string)</li>
+  <li>director: chaîne de caractères (string)</li>
+  <li>cast: chaîne de caractères (string)</li>
+  <li>country: chaîne de caractères (string)</li>
+  <li>date_added: chaîne de caractères (string)</li>
+  <li>release_year: entier (integer)</li>
+  <li>rating: nombre décimal (float)</li>
+  <li>language: chaîne de caractères (string)</li>
+  <li>profit: entier (integer)</li>
+      
+              </ul>
+            </div>
+        </div>
+        <div class="collapse" id="collapsegeneral">
+          <div class="card card-body">
+            <p><b>Source :</b><a href="https://www.kaggle.com/datasets/shivamb/netflix-shows" target="_blank">Netflix Movies and TV Shows</a> </p>
+          </div>
+          </div>
+          <hr>
+        <h4>Outils :</h4>
+        <p>
+          
+          <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExampl" role="button" aria-expanded="false" aria-controls="collapseExampl">
+            Outils
+          </a>
+        </p>
+        <div class="collapse" id="collapseExampl">
+          <div class="card card-body">
+            <div class="row justify-content-center">
+      <img src="images/sheet.png" style="width: 300px; object-fit: contain;" alt="">    
+      <img src="images/plotly.png" style="width: 300px; object-fit: contain;" alt="">    
+      <img src="images/vega.png" style="width: 300px; object-fit: contain;" alt="">  
+      </div>  
+      </div>
+        </div>
+      </div>
+      </body>
