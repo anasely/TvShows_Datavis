@@ -55,5 +55,12 @@
             Le nuage de mots offre une représentation visuelle condensée et expressive des thèmes les plus récurrents . En un coup d'œil, il permet d'identifier les sujets dominants, offrant ainsi une vue synthétique et intuitive des éléments clés du contenu, ce qui peut faciliter la compréhension rapide et la détection de tendances.</p>
         <iframe style='width: 626px; height: 404px;' src='https://voyant-tools.org/tool/Cirrus/?corpus=3b6e1864d7e839330ce9fe9d4d42e240'></iframe>   
      </div>
+    
+     <div>
+        <h2>Graphe des images</h2></h2>
+        <p>
+Le graphique d'images présente chaque films et series sous la forme d'un nœud comprenant une image et une étiquette. En cliquant sur un nœud, toutes les propriétés du films ou series sélectionné sont dévoilées sous forme de triplets RDF, comprenant le sujet (le film ou series), le prédicat (la propriété), et l'objet (la valeur).<iframe style="width: 70vw; height: 40vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Ffilm%20%3Fimage%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%3Ffilm%20wdt%3AP31%20wd%3AQ5398426%3B%0A%20%20%20%20wdt%3AP136%20wd%3AQ343782%3B%0A%20%20%20%20wdt%3AP18%20%3Fimage.%0A%20%20%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups">    
+     </div>
+    
 </body>
 </html>
